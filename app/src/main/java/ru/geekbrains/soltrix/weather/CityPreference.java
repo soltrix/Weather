@@ -6,18 +6,18 @@ import android.content.SharedPreferences;
 public class CityPreference {
 
     //Вспомогательный класс для хранения выбранного города
-    SharedPreferences prefs;
+    private SharedPreferences prefs;
 
     CityPreference(Activity activity) {
         prefs = activity.getPreferences(Activity.MODE_PRIVATE);
     }
 
     // Возвращаем город по умолчанию, если SharedPreferences пустые
-    String getCity() {
-        return prefs.getString("city", "Tomsk");
+    protected String getCity() {
+        return prefs.getString("city", "Yaroslavl");
     }
 
-    void setCity(String city) {
+    protected void setCity(String city) {
         prefs.edit().putString("city", city).apply();
     }
 }

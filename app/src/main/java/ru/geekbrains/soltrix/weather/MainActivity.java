@@ -23,13 +23,13 @@ import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    Handler handler;
-    TextView city;
-    TextView temp;
-    TextView sky;
-    TextView gradus;
-    TextView detailsText;
-    TextView data;
+    private Handler handler;
+    private TextView city;
+    private TextView temp;
+    private TextView sky;
+    protected TextView gradus;
+    private TextView detailsText;
+    private TextView data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,18 +38,18 @@ public class MainActivity extends AppCompatActivity {
 
         handler = new Handler();
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        temp = (TextView) findViewById(R.id.temperature);
+        temp = findViewById(R.id.temperature);
         temp.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/HelveticaNeueCyr-UltraLight.otf"));
-        sky = (TextView) findViewById(R.id.sky);
+        sky = findViewById(R.id.sky);
         sky.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/weather.ttf"));
-        gradus = (TextView) findViewById(R.id.gradus);
+        gradus = findViewById(R.id.gradus);
         gradus.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/HelveticaNeueCyr-UltraLight.otf"));
         gradus.setText("\u00b0C");
-        detailsText = (TextView) findViewById(R.id.details);
-        city = (TextView) findViewById(R.id.city);
-        data = (TextView) findViewById(R.id.data);
+        detailsText = findViewById(R.id.details);
+        city = findViewById(R.id.city);
+        data = findViewById(R.id.data);
 
         updateWeatherData(new CityPreference(MainActivity.this).getCity());
     }
