@@ -6,4 +6,8 @@
     <string name="place_not_found">Извините, нет данных</string>
     <string name="humidity">Влажность</string>
     <string name="pressure">Давление</string>
+    <string name="action_settings">Настройки</string>
+    <string name="info">Информация</string>
+    <string name="action_search">Поиск</string>
+
 </resources>
